@@ -1,5 +1,5 @@
 <template>
-  <header class="toolbar">
+  <header class="site-header">
     <nav class="container">
       <nuxt-link to="/" class="home">
         <slot name="title"></slot>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss">
-.toolbar {
+.site-header {
   position: absolute;
   top: 10px;
   right: 0;
@@ -49,6 +49,9 @@ export default {
       padding: 6px;
       &.home {
         font-size: 1.25rem;
+      }
+      &:not(.home) {
+        margin-left: 6px;
       }
       &:hover {
         color: rgba(255, 255, 255, 0.45);

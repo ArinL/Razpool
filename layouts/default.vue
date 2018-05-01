@@ -1,12 +1,14 @@
 <template>
-    <div>
-        <alheader>
-            <template slot="title">razpool</template>
-            <nuxt-link slot="link" v-for="(link, index) in links" :key="index" :to="link.url">{{ link.name }}</nuxt-link>
-        </alheader>
-        <nuxt/>
-        <alfooter/>
-    </div>
+  <div>
+    <alheader>
+      <template slot="title">{{ title }}</template>
+      <nuxt-link slot="link" v-for="(link, index) in links" :key="index" :to="link.url">{{ link.name }}</nuxt-link>
+    </alheader>
+    <nuxt/>
+    <alfooter>
+      <template slot="title">{{ title }}</template>
+    </alfooter>
+  </div>
 </template>
 
 <script>
@@ -20,17 +22,21 @@ export default {
   },
   data() {
     return {
-        links: [
-            {name: "About",
-             url: "#about"
-            },
-            {name: "Services",
-             url: "#services"
-            },
-            {name: "Contact",
-             url: "#contact"
-            }
-        ]
+      title: "razpool",
+      links: [
+        {
+          name: "About",
+          url: "about"
+        },
+        {
+          name: "Services",
+          url: "services"
+        },
+        {
+          name: "Contact",
+          url: "contact"
+        }
+      ]
     };
   }
 };
@@ -40,12 +46,16 @@ export default {
 html {
   box-sizing: border-box;
 
-  font: 16px "Roboto", sans-serif;
+  font: 16px "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   word-spacing: 1px;
+}
+
+p {
+  line-height: 1.5;
 }
 
 body {

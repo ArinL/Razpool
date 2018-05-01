@@ -5,7 +5,7 @@
         <div class="text">
           <h1>Pool and Spa</h1>
           <h2>Service and Maintenance</h2>
-          <h3>Call:
+          <h3>Contact me at:
             <b>818-280-7887</b>
           </h3>
         </div>
@@ -14,8 +14,13 @@
         <path fill="#f1f5f9" d="M0 30 V12 Q30 17 55 12 T100 11 V30z" />
       </svg>
     </section>
-    <section>
-      <div class="content"></div>
+    <section class="body">
+      <div class="content">
+        <div class="text">
+          <h1 class="text-header">Commercial and Residential</h1>
+          <p>Razpool works with commercial and residential pool and spa systems. We serve the San Fernando valley area. Throughout our many years of experience serving commercial and residential pools and spas, we've learned that many systems have very specific needs. Because of this, we've developed service and maintenance plans that are designed to cater to these unique demands. When you work with Razpool, you will work one-on-one with an expert pool and spa service technician. We will learn exactly what your needs are, whether it is maintenance, a re-build, or a totally new system, and will provide you with the best solution. We believe that no job is too small and pride ourselves in our ability to stay within our clients' budget and deliver our services in a timely manner.</p>
+        </div>
+      </div>
     </section>
   </main>
 </template>
@@ -42,13 +47,13 @@ main {
   }
   .top {
     position: relative;
-    min-height: 70vh;
+    min-height: 75vh;
     position: relative;
     background: url("~/assets/hero.jpg");
     background-size: cover;
     background-position: center 40%;
     .content {
-      min-height: 70vh;
+      min-height: 75vh;
       display: flex;
       align-items: center;
       &::after {
@@ -93,12 +98,40 @@ main {
       bottom: -90px;
       right: 0;
       left: 0;
+      width: 100%;
       z-index: 10;
     }
     @media (max-width: 900px) {
       background-position: 70% 40%;
+      .content {
+        .text {
+          h1 {
+            font-size: 2.5rem;
+          }
+          h2,
+          h3 {
+            font-size: 1.25rem;
+          }
+        }
+      }
       svg {
         bottom: -30px;
+      }
+    }
+  }
+  section.body {
+    position: relative;
+    z-index: 10;
+    .content {
+      margin-top: 10vh;
+      .text {
+        margin-left: 3%;
+        &-header {
+          font-size: 2.5rem;
+          font-weight: 400;
+          color: #37474f;
+          margin-bottom: 24px;
+        }
       }
     }
   }
